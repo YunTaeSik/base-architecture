@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BaseArchitecture</string>
+
+    <string name="msg_quit">"뒤로" 버튼을 한번 더 누르시면 종료됩니다.</string>
+    <string name="error_default">"오류가 발생했습니다. 잠시 후 시도해주세요."</string>
+    <string name="error_socket_timeout">"네트워크 연결 시간이 초과됐습니다. 네트워크 연결을 확인해주세요."</string>
+    <string name="error_https">"네트워크 연결 오류가 발생했습니다. 네트워크 연결을 확인해주세요."</string>
+</resources>
