@@ -6,7 +6,7 @@ buildscript {
 
         compileSdkVersion = 30
         targetSdkVersion = 30
-        minSdkVersion = 21
+        minSdkVersion = 16
         buildToolsVersion = "30.0.2"
 
         gradleVersion = '4.1.0'
@@ -21,6 +21,8 @@ buildscript {
         lifecycleVersion = '2.2.0'
         navigationVersion = '2.3.1'
         pagingVersion = "3.+"
+        multidexVersion = "2.0.1"
+
 
         materialVersion = '1.2.1'
         gsonVersion = '2.8.6'
@@ -30,6 +32,10 @@ buildscript {
         rxandroidVersion = '2.1.1'
 
         koinVersion = "2.1.6"
+
+        roomVersion = "2.2.5"
+
+        glideVersion = "4.11.0"
 
         junitVersion = '4.13.1'
         testVersion = '1.1.2'
@@ -42,6 +48,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$gradleVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
     }
 }
 

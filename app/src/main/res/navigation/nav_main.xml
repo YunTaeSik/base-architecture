@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/userListFragment">
+
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="com.yts.base.presentation.ui.user.UserListFragment"
+        android:label="UserListFragment"
+        tools:layout="@layout/fragment_user_list">
+        <argument
+            android:name="query"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/likeListFragment"
+        android:name="com.yts.base.presentation.ui.like.LikeUserListFragment"
+        android:label="LikeListFragment"
+        tools:layout="@layout/fragment_like_user_list">
+        <argument
+            android:name="query"
+            app:argType="string" />
+    </fragment>
+</navigation>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/userListFragment"
+        android:icon="@drawable/ic_twotone_list_24"
+        android:title="@string/list" />
+    <item
+        android:id="@+id/likeListFragment"
+        android:icon="@drawable/ic_twotone_favorite_24"
+        android:title="@string/like" />
+
+</menu>

@@ -1,9 +1,9 @@
-package com.yts.base.presentation.splash
+package com.yts.base.presentation.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.yts.base.presentation.MainActivity
+import com.yts.base.presentation.ui.MainActivity
 
 class SplashActivity : AppCompatActivity() {
 

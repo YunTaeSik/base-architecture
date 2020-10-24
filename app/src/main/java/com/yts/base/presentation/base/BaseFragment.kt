@@ -15,7 +15,6 @@ abstract class BaseFragment<B : ViewDataBinding> : Fragment() {
     protected abstract fun onLayoutId(): Int
     protected abstract fun observer()
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,29 +28,4 @@ abstract class BaseFragment<B : ViewDataBinding> : Fragment() {
         }
         return binding.root
     }
-
-    /*protected fun addBindingVariable(variableId: Int, value: Any) {
-        binding.setVariable(variableId, value)
-    }
-
-    protected fun setHoldExitTransition() {
-        exitTransition = Hold().apply {
-            duration = AnimationDuration.MEDIUM_EXPANDING
-        }
-    }
-
-    protected fun setSharedElementTransition() {
-        sharedElementEnterTransition = MaterialContainerTransform()
-        sharedElementReturnTransition = MaterialContainerTransform()
-    }*/
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        postponeEnterTransition()
-        view?.doOnPreDraw {
-            startPostponedEnterTransition()
-        }
-        observer()
-    }
-
 }

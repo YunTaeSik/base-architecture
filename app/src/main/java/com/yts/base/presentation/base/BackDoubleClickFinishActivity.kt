@@ -7,7 +7,7 @@ import com.yts.base.R
 import com.yts.base.extension.makeToast
 
 abstract class BackDoubleClickFinishActivity<B : ViewDataBinding> : BaseActivity<B>() {
-    private val TIME_INTERVAL = 2000
+    private val timeInterval = 2000
     private var mBackPressed: Long = 0
 
 
@@ -18,7 +18,7 @@ abstract class BackDoubleClickFinishActivity<B : ViewDataBinding> : BaseActivity
 
     private fun setOnBackDoublePressedFinish() {
         onBackPressedDispatcher.addCallback {
-            if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis()) {
+            if (mBackPressed + timeInterval > System.currentTimeMillis()) {
                 finish()
             } else {
                 makeToast(R.string.msg_quit)
