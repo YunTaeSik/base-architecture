@@ -7,8 +7,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yts.base.R
 import com.yts.base.databinding.ActivityMainBinding
 import com.yts.base.presentation.base.BackDoubleClickFinishActivity
+import dagger.hilt.android.AndroidEntryPoint
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@AndroidEntryPoint
 class MainActivity : BackDoubleClickFinishActivity<ActivityMainBinding>() {
     private val model: MainViewModel by viewModel()
 
