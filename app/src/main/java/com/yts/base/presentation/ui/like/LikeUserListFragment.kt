@@ -1,24 +1,24 @@
 package com.yts.base.presentation.ui.like
 
 import android.os.Bundle
-import android.util.Log
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yts.base.R
 import com.yts.base.databinding.FragmentLikeUserListBinding
 import com.yts.base.extension.EventObserver
 import com.yts.base.presentation.base.BaseFragment
 import com.yts.base.presentation.ui.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_like_user_list.*
-import org.koin.android.ext.android.inject
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.parameter.parametersOf
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class LikeUserListFragment : BaseFragment<FragmentLikeUserListBinding>() {
-    private val model: LikeUserListViewModel by viewModel()
-    private val mainViewModel: MainViewModel by sharedViewModel()
+    private val model: LikeUserListViewModel by viewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
 
-    private val likeUserListAdapter: LikeUserListAdapter by inject() { parametersOf(model) }
+    private lateinit var likeUserListAdapter: LikeUserListAdapter
 
     override fun onLayoutId(): Int = R.layout.fragment_like_user_list
 
@@ -30,6 +30,7 @@ class LikeUserListFragment : BaseFragment<FragmentLikeUserListBinding>() {
 
     private fun initAdapter() {
         list_like.apply {
+            likeUserListAdapter = LikeUserListAdapter(model)
             layoutManager = LinearLayoutManager(context)
             adapter = likeUserListAdapter
         }

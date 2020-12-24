@@ -1,31 +1,26 @@
 package com.yts.base.presentation.ui.user
 
 import android.os.Bundle
-import android.util.Log
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.greencar.fieldworksystem.presentation.common.OnPageLoadStateRefreshListener
 import com.yts.base.R
 import com.yts.base.databinding.FragmentUserListBinding
 import com.yts.base.presentation.base.BaseFragment
 import com.yts.base.presentation.ui.MainViewModel
 import com.yts.base.presentation.ui.common.PageLoadStateAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_user_list.*
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
-import org.koin.android.ext.android.inject
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.parameter.parametersOf
 
+@AndroidEntryPoint
 class UserListFragment : BaseFragment<FragmentUserListBinding>(), OnPageLoadStateRefreshListener {
-    private val model: UserListViewModel by sharedViewModel()
-    private val mainViewModel: MainViewModel by sharedViewModel()
+    private val model: UserListViewModel by viewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
 
-    private val userListPagingAdapter: UserListPagingAdapter by inject() { parametersOf(model) }
+    private lateinit var userListPagingAdapter: UserListPagingAdapter
 
     override fun onLayoutId(): Int = R.layout.fragment_user_list
 
@@ -37,6 +32,7 @@ class UserListFragment : BaseFragment<FragmentUserListBinding>(), OnPageLoadStat
 
     private fun initAdapter() {
         list_user.apply {
+            userListPagingAdapter = UserListPagingAdapter(model)
             layoutManager = LinearLayoutManager(context)
             adapter =
                 userListPagingAdapter.withLoadStateFooter(PageLoadStateAdapter(this@UserListFragment))

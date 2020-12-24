@@ -1,5 +1,6 @@
 package com.yts.base.presentation.ui.user
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -12,7 +13,7 @@ import io.reactivex.disposables.Disposable
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
-class UserListViewModel(
+class UserListViewModel @ViewModelInject constructor(
     private val getTokenUseCase: GetTokenUseCase,
     private val getUsersUseCase: GetUsersUseCase,
     private val getLikeUserUseCase: GetLikeUserUseCase,

@@ -1,6 +1,7 @@
 package com.yts.base.presentation.ui
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -8,11 +9,10 @@ import com.yts.base.R
 import com.yts.base.databinding.ActivityMainBinding
 import com.yts.base.presentation.base.BackDoubleClickFinishActivity
 import dagger.hilt.android.AndroidEntryPoint
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 @AndroidEntryPoint
 class MainActivity : BackDoubleClickFinishActivity<ActivityMainBinding>() {
-    private val model: MainViewModel by viewModel()
+    private val model: MainViewModel by viewModels()
 
     override fun onLayoutId(): Int = R.layout.activity_main
 

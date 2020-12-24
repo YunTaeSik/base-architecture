@@ -10,11 +10,6 @@
         <variable
             name="model"
             type="com.yts.base.presentation.ui.user.UserListViewModel" />
-
-        <variable
-            name="main"
-            type="com.yts.base.presentation.ui.user.UserListViewModel" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

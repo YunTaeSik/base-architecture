@@ -1,5 +1,6 @@
 package com.yts.base.di.koinmodule
 
+/*
 import com.yts.base.util.Const
 import com.yts.data.repository.UserRepositoryImp
 import com.yts.domain.repository.UserRepository
@@ -17,3 +18,4 @@ val domainModule = module {
     single { GetLikeUsersUseCase(get()) }
     single { DeleteUserUseCase(get()) }
 }
+*/

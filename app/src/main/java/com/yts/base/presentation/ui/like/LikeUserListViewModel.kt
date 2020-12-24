@@ -1,6 +1,6 @@
 package com.yts.base.presentation.ui.like
 
-import android.util.Log
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -9,11 +9,9 @@ import com.yts.base.presentation.base.BaseViewModel
 import com.yts.domain.entity.User
 import com.yts.domain.usecase.DeleteUserUseCase
 import com.yts.domain.usecase.GetLikeUsersUseCase
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
-class LikeUserListViewModel(
+class LikeUserListViewModel @ViewModelInject constructor(
     private val getLikeUsersUseCase: GetLikeUsersUseCase,
     private val deleteUserUseCase: DeleteUserUseCase
 ) : BaseViewModel() {

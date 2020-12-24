@@ -1,4 +1,5 @@
 package com.yts.base.di.koinmodule
+/*
 
 import android.os.Build
 import androidx.room.Room
@@ -71,3 +72,4 @@ val dataModule = module {
         get<Retrofit>().create(SearchService::class.java)
     }
 }
+*/

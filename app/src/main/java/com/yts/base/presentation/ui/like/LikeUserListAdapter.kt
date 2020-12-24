@@ -11,6 +11,7 @@ import com.yts.base.databinding.ItemUserBinding
 import com.yts.base.presentation.ui.user.UserListViewModel
 import com.yts.base.util.CommonDiffUtil
 import com.yts.domain.entity.User
+import javax.inject.Inject
 
 class LikeUserListAdapter(val model: LikeUserListViewModel) :
     ListAdapter<User, LikeUserListAdapter.UserViewHolder>(CommonDiffUtil()) {

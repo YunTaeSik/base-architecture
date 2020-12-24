@@ -13,6 +13,7 @@ import com.yts.domain.entity.User
 import kotlinx.android.synthetic.main.item_user.view.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 class UserListPagingAdapter(val model: UserListViewModel) :
     PagingDataAdapter<User, UserListPagingAdapter.UserViewHolder>(CommonDiffUtil()) {

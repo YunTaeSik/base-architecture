@@ -1,5 +1,6 @@
 package com.yts.base.di.koinmodule
 
+/*
 import com.yts.base.presentation.ui.MainViewModel
 import com.yts.base.presentation.ui.like.LikeUserListViewModel
 import com.yts.base.presentation.ui.like.LikeUserListAdapter
@@ -25,3 +26,4 @@ val appModule = module {
 
 }
 
+*/
